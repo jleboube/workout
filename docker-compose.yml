@@ -1,0 +1,39 @@
+
+services:
+  workout-calendar:
+    build: .
+    container_name: baseball-workout-calendar
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/usr/share/nginx/html
+    restart: unless-stopped
+    environment:
+      - TZ=America/Chicago
+    networks:
+      - workout-net
+
+  # Optional: Add a backup service for data export
+  backup:
+    image: alpine:latest
+    container_name: workout-backup
+    volumes:
+      - ./backups:/backups
+      - ./www:/app
+    command: |
+      sh -c "
+        while true; do
+          echo 'Backup service running...'
+          sleep 3600
+        done
+      "
+    restart: unless-stopped
+    networks:
+      - workout-net
+
+networks:
+  workout-net:
+    driver: bridge
+
+volumes:
+  nginx-cache:

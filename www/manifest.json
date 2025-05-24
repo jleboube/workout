@@ -1,0 +1,20 @@
+{
+  "name": "Baseball Workout Calendar",
+  "short_name": "Workout",
+  "description": "Track your baseball training progress",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffaa00",
+  "theme_color": "#002fff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚾%3C/text%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["sports", "fitness", "productivity"],
+  "screenshots": []
+}
